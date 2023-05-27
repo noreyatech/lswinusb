@@ -1,0 +1,14 @@
+name: Build
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  Build:
+    runs-on: windows-latest
+    container: rust:latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build project
+        run: cargo build --all --verbose
