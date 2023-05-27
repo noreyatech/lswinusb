@@ -1,0 +1,26 @@
+[package]
+name = "lswinusb"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"], optional = true }
+serde_json = { version = "1.0", optional = true }
+
+[dependencies.windows]
+version = "0.48"
+features = [
+    "Win32_Devices_DeviceAndDriverInstallation",
+    "Win32_Foundation",
+    "Win32_Security",
+    "Win32_Devices_Properties",
+    "Win32_Devices_Usb",
+    "Win32_Storage_FileSystem",
+    "Win32_System_IO",
+    "Win32_Globalization",
+]
+
+[features]
+default = ["serde", "serde_binary_example"]
+serde = ["dep:serde"]
+serde_binary_example = ["dep:serde_json"]
