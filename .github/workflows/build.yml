@@ -12,7 +12,6 @@ env:
 jobs:
   Build:
     runs-on: windows-latest
-    container: rust:latest
 
     steps:
       - uses: actions/checkout@v2
