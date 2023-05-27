@@ -1,6 +1,7 @@
 # lswinusb - A Rust library for listing USB Descriptors on Windows
 
-**This library is in an experimental stage and needs testing, it is not ready for crates.io publishing**
+**This library is in an experimental stage and needs to be tested, it is not ready for publishing on crates.io.**
+For testing, you can find a util in on the release page that prints the output in json format.
 
 ## The problem
 Unlike Linux and Mac, Windows does not decode, store or provide the full USB descriptor of the connected devices.
