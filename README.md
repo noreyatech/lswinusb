@@ -30,7 +30,16 @@ Since this lib is not under active development, feature requests will not be pro
 
 ## Usage example
 Cargo.toml:  
-TODO
+```toml
+[dependencies]
+lswinusb = { package = "lswinusb", git = "https://github.com/noreyatech/lswinusb.git", branch = "master", features = ["serde"] }
+serde_json = { version = "1.0"}
+
+[dependencies.windows]
+version = "0.48"
+features = ["Win32_Globalization"]
+
+```
 
 main.rs:
 ```rust
@@ -89,7 +98,6 @@ Sample output:
   }
 ]
 ```
-
 
 ## Other
 If you want a comparison tool which uses the same API you can test the GUI utility [usbtreeview](https://www.uwe-sieber.de/usbtreeview_e.html).
