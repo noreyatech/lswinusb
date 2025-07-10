@@ -2,7 +2,8 @@ use serde::{Deserialize, Serialize};
 use std::fmt;
 
 #[allow(non_snake_case)]
-#[derive(Serialize, Deserialize)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+#[derive(Clone, Eq, PartialEq)]
 pub struct UsbDeviceDescriptor {
     pub bLength: u8,
     pub bDescriptorType: u8,
@@ -60,7 +61,7 @@ impl fmt::Debug for UsbDeviceDescriptor {
 }
 
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
-#[derive(Debug)]
+#[derive(Debug, Clone, Eq, PartialEq)]
 pub struct Device {
     pub container_id: String,
     pub driver_key_name: String,
@@ -69,7 +70,7 @@ pub struct Device {
 }
 
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
-#[derive(Debug)]
+#[derive(Debug, Clone, Eq, PartialEq)]
 pub struct Hub {
     pub hub_id: String,
     pub number_of_ports: u8,
