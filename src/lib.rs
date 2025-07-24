@@ -405,20 +405,20 @@ fn get_hub_devices(hub: String, hub_list: &mut Vec<Hub>, lang_id: u16) -> Result
                                             for element in result {
                                                 if element.0 == driverkey {
                                                     device.container_id = element.1;
-                                                    hub_results.push(device);
                                                     break;
                                                 }
                                             }
                                         }
-                                        Err(err) => {
-                                            return Err(err);
+                                        Err(_err) => {
+                                            // return Err(err);
                                         }
                                     };
                                 }
-                                Err(err) => {
-                                    return Err(err);
+                                Err(_err) => {
+                                    // return Err(err);
                                 }
                             };
+                            hub_results.push(device);
                         }
                         Err(_err) => {
                             // NOTE: Ignore not connected/transition/ishub errors
